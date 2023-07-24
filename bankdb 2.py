@@ -8,7 +8,7 @@ Creating my first MySQL database
 
 import mysql.connector
 
-conn = mysql.connector.connect(host="localhost", user="root", password="@derib1gbe", database="")
+conn = mysql.connector.connect(host="localhost", user="root", password="", database="")
 cursor = conn.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS bank")
 cursor.execute("USE bank")

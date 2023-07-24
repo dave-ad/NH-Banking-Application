@@ -1,3 +1,4 @@
+__author__ = "AD"
 import sys
 # from PIL import Image, ImageTk
 
@@ -104,7 +105,7 @@ class Toplevel1:
         top.configure(highlightcolor="black")
 
         # ----------CREATE MYSQL CONNECTION---------------------------------
-        self.conn = mysql.connector.connect(host="localhost", database="bank", user="root", password="@derib1gbe")
+        self.conn = mysql.connector.connect(host="localhost", database="", user="root", password="")
         self.cursor = self.conn.cursor()
 
         # -----------------------CREATE TCP/IP SERVER CONNECTION----------------
@@ -113,6 +114,7 @@ class Toplevel1:
         port = 8000
         self.s.connect((host, port))
 
+        # -----------------------TERMS AND CONDITION----------------
         self.T_and_C = tk.Frame(top)
         self.T_and_C.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
         self.T_and_C.configure(relief='groove')
@@ -123,6 +125,7 @@ class Toplevel1:
         self.T_and_C.configure(highlightbackground="#d9d9d9")
         self.T_and_C.configure(highlightcolor="black")
 
+        # LABELFRAME
         self.Labelframe1 = tk.LabelFrame(self.T_and_C)
         self.Labelframe1.place(x=11, y=40, height=680, width=553)
         self.Labelframe1.configure(relief='groove')
@@ -133,10 +136,20 @@ class Toplevel1:
         self.Labelframe1.configure(highlightbackground="#d9d9d9")
         self.Labelframe1.configure(highlightcolor="black")
 
+        # T & C MESSAGE
+        self.Message1 = tk.Message(self.Labelframe1)
+        self.Message1.place(x=10, y=56, height=409, width=510, bordermode='ignore')
+        self.Message1.configure(background="#ff0000")
+        self.Message1.configure(foreground="#000000")
+        self.Message1.configure(highlightbackground="#ffffff")
+        self.Message1.configure(highlightcolor="black")
+        self.Message1.configure(text='''loremm''')
+        self.Message1.configure(width=531)
+
+        # T & C CHECKBOX
         self.che48 = tk.StringVar()
         self.Checkbutton1 = tk.Checkbutton(self.Labelframe1)
-        self.Checkbutton1.place(x=97, y=494, height=61, width=350
-                                , bordermode='ignore')
+        self.Checkbutton1.place(x=97, y=494, height=61, width=350, bordermode='ignore')
         self.Checkbutton1.configure(activebackground="#ffffff")
         self.Checkbutton1.configure(activeforeground="#000000")
         self.Checkbutton1.configure(background="#ffffff")
@@ -151,9 +164,9 @@ class Toplevel1:
         self.Checkbutton1.configure(relief="groove")
         self.Checkbutton1.configure(variable=self.che48)
 
+        # AGREE BUTTON
         self.Button4 = tk.Button(self.Labelframe1, command=lambda: self.validation_acc_thread(None))
-        self.Button4.place(x=78, y=585, height=34, width=129
-                           , bordermode='ignore')
+        self.Button4.place(x=78, y=585, height=34, width=129, bordermode='ignore')
         self.Button4.configure(activebackground="#ececec")
         self.Button4.configure(activeforeground="#000000")
         self.Button4.configure(background="#000000")
@@ -165,9 +178,9 @@ class Toplevel1:
         self.Button4.configure(pady="0")
         self.Button4.configure(text='''Agree''')
 
+        # DISMISS BUTTON
         self.Button5 = tk.Button(self.Labelframe1, command=lambda: self.show_frame(self.Frame1))
-        self.Button5.place(x=301, y=585, height=34, width=129
-                           , bordermode='ignore')
+        self.Button5.place(x=301, y=585, height=34, width=129, bordermode='ignore')
         self.Button5.configure(activebackground="#ececec")
         self.Button5.configure(activeforeground="#000000")
         self.Button5.configure(background="#000000")
@@ -179,20 +192,9 @@ class Toplevel1:
         self.Button5.configure(pady="0")
         self.Button5.configure(text='''Dismiss''')
 
-        self.Message1 = tk.Message(self.Labelframe1)
-        self.Message1.place(x=10, y=56, height=409, width=510
-                            , bordermode='ignore')
-        self.Message1.configure(background="#ff0000")
-        self.Message1.configure(foreground="#000000")
-        self.Message1.configure(highlightbackground="#ffffff")
-        self.Message1.configure(highlightcolor="black")
-        self.Message1.configure(
-            text='''loremm''')
-        self.Message1.configure(width=531)
 
         # self.Message2 = tk.Message(self.Labelframe1)
-        # self.Message2.place(x=126, y=505, height=46, width=269
-        #                     , bordermode='ignore')
+        # self.Message2.place(x=126, y=505, height=46, width=269, bordermode='ignore')
         # self.Message2.configure(background="#ffffff")
         # self.Message2.configure(font="-family {Arial} -size 11 -weight bold")
         # self.Message2.configure(foreground="#000000")
@@ -201,6 +203,9 @@ class Toplevel1:
         # self.Message2.configure(text='''I agree to the terms and conditions''')
         # self.Message2.configure(width=277)
 
+        
+        # -----------------------lOGIN----------------
+        # CREATING LOGIN FRAME
         self.login = tk.Frame(top)
         self.login.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
         self.login.configure(relief='groove')
@@ -210,6 +215,19 @@ class Toplevel1:
         self.login.configure(highlightbackground="#d9d9d9")
         self.login.configure(highlightcolor="black")
 
+        # LOGO
+        self.Label23 = tk.Label(self.login)
+        self.Label23.place(x=19, y=10, height=103, width=151)
+        self.Label23.configure(background="#d9d9d9")
+        self.Label23.configure(disabledforeground="#a3a3a3")
+        self.Label23.configure(foreground="#000000")
+        photo_location = os.path.join(prog_location, "edhac1.jpg")
+        global _img0
+        # _img0 = ImageTk.PhotoImage(file=photo_location)
+        # self.Label23.configure(image=_img0)
+        self.Label23.configure(text='''Label''')
+
+        # LABEL FRAME
         self.Labelframe2 = tk.LabelFrame(self.login)
         self.Labelframe2.place(x=39, y=145, height=453, width=522)
         self.Labelframe2.configure(relief='groove')
@@ -219,6 +237,7 @@ class Toplevel1:
         self.Labelframe2.configure(highlightbackground="#d9d9d9")
         self.Labelframe2.configure(highlightcolor="black")
 
+        # USERNAME
         self.Label2 = tk.Label(self.Labelframe2)
         self.Label2.place(x=29, y=86, height=33, width=108, bordermode='ignore')
         self.Label2.configure(activebackground="#f9f9f9")
@@ -231,9 +250,9 @@ class Toplevel1:
         self.Label2.configure(highlightcolor="black")
         self.Label2.configure(text='''Username :''')
 
+        # USER-PIN
         self.Label3 = tk.Label(self.Labelframe2)
         self.Label3.place(x=19, y=148, height=40, width=116, bordermode='ignore')
-
         self.Label3.configure(activebackground="#f9f9f9")
         self.Label3.configure(activeforeground="black")
         self.Label3.configure(background="#ffffff")
@@ -244,9 +263,9 @@ class Toplevel1:
         self.Label3.configure(highlightcolor="black")
         self.Label3.configure(text='''Pin :''')
 
+        # USERNAME ENTRY
         self.Entry1 = tk.Entry(self.Labelframe2)
         self.Entry1.place(x=166, y=90, height=27, width=204, bordermode='ignore')
-
         self.Entry1.configure(background="white")
         self.Entry1.configure(disabledforeground="#a3a3a3")
         self.Entry1.configure(font="TkFixedFont")
@@ -257,9 +276,9 @@ class Toplevel1:
         self.Entry1.configure(selectbackground="blue")
         self.Entry1.configure(selectforeground="white")
 
+        # USER-PIN ENTRY
         self.Entry2 = tk.Entry(self.Labelframe2)
-        self.Entry2.place(x=166, y=159, height=27, width=204
-                          , bordermode='ignore')
+        self.Entry2.place(x=166, y=159, height=27, width=204, bordermode='ignore')
         self.Entry2.configure(background="white")
         self.Entry2.configure(disabledforeground="#a3a3a3")
         self.Entry2.configure(font="TkFixedFont")
@@ -270,10 +289,9 @@ class Toplevel1:
         self.Entry2.configure(selectbackground="blue")
         self.Entry2.configure(selectforeground="white")
 
-        self.Button1 = tk.Button(self.Labelframe2,
-                                 command=lambda: self.authentication_thread(None))
-        self.Button1.place(x=156, y=240, height=34, width=150
-                           , bordermode='ignore')
+        # LOGIN BUTTON
+        self.Button1 = tk.Button(self.Labelframe2,command=lambda: self.authentication_thread(None))
+        self.Button1.place(x=156, y=240, height=34, width=150, bordermode='ignore')
         self.Button1.configure(activebackground="#ececec")
         self.Button1.configure(activeforeground="#000000")
         self.Button1.configure(background="#000000")
@@ -286,6 +304,7 @@ class Toplevel1:
         self.Button1.configure(pady="0")
         self.Button1.configure(text='''Login''')
 
+        # HOME BUTTON
         self.Button10 = tk.Button(self.login, command=lambda: self.show_frame(self.Frame1))
         self.Button10.place(x=381, y=29, height=34, width=77)
         self.Button10.configure(activebackground="#ececec")
@@ -300,6 +319,7 @@ class Toplevel1:
         self.Button10.configure(pady="0")
         self.Button10.configure(text='''Home''')
 
+        # REGISTER BUTTON
         self.Button11 = tk.Button(self.login, command=lambda: self.show_frame(self.Registration))
         self.Button11.place(x=487, y=29, height=34, width=77)
         self.Button11.configure(activebackground="#ececec")
@@ -313,18 +333,7 @@ class Toplevel1:
         self.Button11.configure(pady="0")
         self.Button11.configure(text='''Register''')
 
-        # CREATING LOGIN FRAME
-        self.Label23 = tk.Label(self.login)
-        self.Label23.place(x=19, y=10, height=103, width=151)
-        self.Label23.configure(background="#d9d9d9")
-        self.Label23.configure(disabledforeground="#a3a3a3")
-        self.Label23.configure(foreground="#000000")
-        photo_location = os.path.join(prog_location, "edhac1.jpg")
-        global _img0
-        # _img0 = ImageTk.PhotoImage(file=photo_location)
-        # self.Label23.configure(image=_img0)
-        self.Label23.configure(text='''Label''')
-
+        # -----------------------CREATE AACCOUNT----------------
         self.Create = tk.Frame(top)
         self.Create.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
         self.Create.configure(relief='groove')
@@ -334,6 +343,7 @@ class Toplevel1:
         self.Create.configure(highlightbackground="#d9d9d9")
         self.Create.configure(highlightcolor="white")
 
+        # LABEL FRAME
         self.Labelframe3 = tk.LabelFrame(self.Create)
         self.Labelframe3.place(x=19, y=116, height=602, width=554)
         self.Labelframe3.configure(relief='groove')
@@ -344,6 +354,7 @@ class Toplevel1:
         self.Labelframe3.configure(highlightbackground="#d9d9d9")
         self.Labelframe3.configure(highlightcolor="white")
 
+        # FULL NAME LABEL
         self.Label4 = tk.Label(self.Labelframe3)
         self.Label4.place(x=11, y=50, height=35, width=66, bordermode='ignore')
         self.Label4.configure(activebackground="#f9f9f9")
@@ -356,6 +367,7 @@ class Toplevel1:
         self.Label4.configure(highlightcolor="black")
         self.Label4.configure(text='''Fullname''')
 
+        # EMAIL LABEL
         self.Label5 = tk.Label(self.Labelframe3)
         self.Label5.place(x=11, y=146, height=36, width=86, bordermode='ignore')
         self.Label5.configure(activebackground="#f9f9f9")
@@ -368,6 +380,7 @@ class Toplevel1:
         self.Label5.configure(highlightcolor="black")
         self.Label5.configure(text='''E-mail''')
 
+        # D.O.B LABEL
         self.Label6 = tk.Label(self.Labelframe3)
         self.Label6.place(x=11, y=249, height=36, width=68, bordermode='ignore')
         self.Label6.configure(activebackground="#f9f9f9")
@@ -380,6 +393,7 @@ class Toplevel1:
         self.Label6.configure(highlightcolor="black")
         self.Label6.configure(text='''D.O.B''')
 
+        # PHONE NUMBER LABEL
         self.Label7 = tk.Label(self.Labelframe3)
         self.Label7.place(x=11, y=349, height=36, width=68, bordermode='ignore')
         self.Label7.configure(activebackground="#f9f9f9")
@@ -392,6 +406,7 @@ class Toplevel1:
         self.Label7.configure(highlightcolor="black")
         self.Label7.configure(text='''Phone''')
 
+        # ADDRESS LABEL
         self.Label8 = tk.Label(self.Labelframe3)
         self.Label8.place(x=11, y=465, height=36, width=90, bordermode='ignore')
         self.Label8.configure(activebackground="#f9f9f9")
@@ -404,39 +419,14 @@ class Toplevel1:
         self.Label8.configure(highlightcolor="black")
         self.Label8.configure(text='''Address''')
 
+        # SPERATOR LINE
         self.TSeparator1 = ttk.Separator(self.Labelframe3)
         self.TSeparator1.place(x=266, y=23, height=0, bordermode='ignore')
         self.TSeparator1.configure(orient="vertical")
 
-        self.Label10 = tk.Label(self.Labelframe3)
-        self.Label10.place(x=400, y=210, height=37, width=83
-                           , bordermode='ignore')
-        self.Label10.configure(activebackground="#f9f9f9")
-        self.Label10.configure(activeforeground="black")
-        self.Label10.configure(background="#ffffff")
-        self.Label10.configure(disabledforeground="#a3a3a3")
-        self.Label10.configure(font="-family {Verdana} -size 11")
-        self.Label10.configure(foreground="#000000")
-        self.Label10.configure(highlightbackground="#d9d9d9")
-        self.Label10.configure(highlightcolor="black")
-        self.Label10.configure(text='''Married''')
-
-        self.Label11 = tk.Label(self.Labelframe3)
-        self.Label11.place(x=288, y=195, height=70, width=66
-                           , bordermode='ignore')
-        self.Label11.configure(activebackground="#f9f9f9")
-        self.Label11.configure(activeforeground="black")
-        self.Label11.configure(background="#ffffff")
-        self.Label11.configure(disabledforeground="#a3a3a3")
-        self.Label11.configure(font="-family {Verdana} -size 11")
-        self.Label11.configure(foreground="#000000")
-        self.Label11.configure(highlightbackground="#d9d9d9")
-        self.Label11.configure(highlightcolor="black")
-        self.Label11.configure(text='''Single''')
-
+        # MALE LABEL
         self.Label13 = tk.Label(self.Labelframe3)
         self.Label13.place(x=288, y=72, height=35, width=51, bordermode='ignore')
-
         self.Label13.configure(activebackground="#f9f9f9")
         self.Label13.configure(activeforeground="black")
         self.Label13.configure(background="#ffffff")
@@ -447,10 +437,10 @@ class Toplevel1:
         self.Label13.configure(highlightcolor="black")
         self.Label13.configure(text='''Male''')
 
+        # MALE RADIOBUTTON
         self.rad1 = tk.IntVar()
         self.Radiobutton1 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton1.place(x=338, y=72, height=42, width=39
-                                , bordermode='ignore')
+        self.Radiobutton1.place(x=338, y=72, height=42, width=39, bordermode='ignore')
         self.Radiobutton1.configure(activebackground="#ececec")
         self.Radiobutton1.configure(activeforeground="#000000")
         self.Radiobutton1.configure(background="#ffffff")
@@ -461,9 +451,9 @@ class Toplevel1:
         self.Radiobutton1.configure(justify='left')
         self.Radiobutton1.configure(variable=self.rad1)
 
+        # FEMALE LABEL
         self.Label14 = tk.Label(self.Labelframe3)
         self.Label14.place(x=370, y=72, height=35, width=73, bordermode='ignore')
-
         self.Label14.configure(activebackground="#f9f9f9")
         self.Label14.configure(activeforeground="black")
         self.Label14.configure(background="#ffffff")
@@ -473,11 +463,36 @@ class Toplevel1:
         self.Label14.configure(highlightbackground="#d9d9d9")
         self.Label14.configure(highlightcolor="black")
         self.Label14.configure(text='''Female''')
+        
+        # MARRIED LABEL
+        self.Label10 = tk.Label(self.Labelframe3)
+        self.Label10.place(x=400, y=210, height=37, width=83, bordermode='ignore')
+        self.Label10.configure(activebackground="#f9f9f9")
+        self.Label10.configure(activeforeground="black")
+        self.Label10.configure(background="#ffffff")
+        self.Label10.configure(disabledforeground="#a3a3a3")
+        self.Label10.configure(font="-family {Verdana} -size 11")
+        self.Label10.configure(foreground="#000000")
+        self.Label10.configure(highlightbackground="#d9d9d9")
+        self.Label10.configure(highlightcolor="black")
+        self.Label10.configure(text='''Married''')
+
+        # SINGLE LABEL
+        self.Label11 = tk.Label(self.Labelframe3)
+        self.Label11.place(x=288, y=195, height=70, width=66, bordermode='ignore')
+        self.Label11.configure(activebackground="#f9f9f9")
+        self.Label11.configure(activeforeground="black")
+        self.Label11.configure(background="#ffffff")
+        self.Label11.configure(disabledforeground="#a3a3a3")
+        self.Label11.configure(font="-family {Verdana} -size 11")
+        self.Label11.configure(foreground="#000000")
+        self.Label11.configure(highlightbackground="#d9d9d9")
+        self.Label11.configure(highlightcolor="black")
+        self.Label11.configure(text='''Single''')
 
         self.rad2 = tk.IntVar()
         self.Radiobutton2 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton2.place(x=452, y=72, height=42, width=59
-                                , bordermode='ignore')
+        self.Radiobutton2.place(x=452, y=72, height=42, width=59, bordermode='ignore')
         self.Radiobutton2.configure(activebackground="#ececec")
         self.Radiobutton2.configure(activeforeground="#000000")
         self.Radiobutton2.configure(background="#ffffff")
@@ -489,8 +504,7 @@ class Toplevel1:
         self.Radiobutton2.configure(variable=self.rad2)
 
         self.Label9 = tk.Label(self.Labelframe3)
-        self.Label9.place(x=277, y=133, height=51, width=145
-                          , bordermode='ignore')
+        self.Label9.place(x=277, y=133, height=51, width=145, bordermode='ignore')
         self.Label9.configure(activebackground="#f9f9f9")
         self.Label9.configure(activeforeground="black")
         self.Label9.configure(background="#ffffff")
@@ -503,8 +517,7 @@ class Toplevel1:
 
         self.rad3 = tk.IntVar()
         self.Radiobutton3 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton3.place(x=359, y=210, height=42, width=29
-                                , bordermode='ignore')
+        self.Radiobutton3.place(x=359, y=210, height=42, width=29, bordermode='ignore')
         self.Radiobutton3.configure(activebackground="#ececec")
         self.Radiobutton3.configure(activeforeground="#000000")
         self.Radiobutton3.configure(background="#ffffff")
@@ -517,8 +530,7 @@ class Toplevel1:
 
         self.rad4 = tk.IntVar()
         self.Radiobutton4 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton4.place(x=493, y=210, height=42, width=28
-                                , bordermode='ignore')
+        self.Radiobutton4.place(x=493, y=210, height=42, width=28, bordermode='ignore')
         self.Radiobutton4.configure(activebackground="#ececec")
         self.Radiobutton4.configure(activeforeground="#000000")
         self.Radiobutton4.configure(background="#ffffff")
@@ -543,7 +555,6 @@ class Toplevel1:
 
         self.Entry4 = tk.Entry(self.Labelframe3)
         self.Entry4.place(x=41, y=204, height=20, width=204, bordermode='ignore')
-
         self.Entry4.configure(background="white")
         self.Entry4.configure(disabledforeground="#a3a3a3")
         self.Entry4.configure(font="TkFixedFont")

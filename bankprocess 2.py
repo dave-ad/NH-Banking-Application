@@ -17,7 +17,7 @@ class processServer(threading.Thread):
         threading.Thread.__init__(self)
         self.client = client
         self.addr = addr
-        self.conn = mysql.connector.connect(host="localhost", database="bank", user="root", password="@derib1gbe")
+        self.conn = mysql.connector.connect(host="localhost", database="bankdb2", user="root", password="")
         self.cursor = self.conn.cursor()
 
     def run(self):
