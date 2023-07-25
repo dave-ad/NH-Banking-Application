@@ -1,4 +1,11 @@
 __author__ = "AD"
+"""
+Refactored on Tue Jul 24 10:07:27 2021
+
+@author: AD
+Refactoring EDHAC banking software to create a more mordern UI and backend
+"""
+
 import sys
 # from PIL import Image, ImageTk
 
@@ -343,6 +350,18 @@ class Toplevel1:
         self.Create.configure(highlightbackground="#d9d9d9")
         self.Create.configure(highlightcolor="white")
 
+        # LOGO
+        self.Label21 = tk.Label(self.Create)
+        self.Label21.place(x=20, y=10, height=98, width=138)
+        self.Label21.configure(background="#ffffff")
+        self.Label21.configure(disabledforeground="#a3a3a3")
+        self.Label21.configure(foreground="#000000")
+        photo_location = os.path.join(prog_location, "edhac1.jpg")
+        global _img1
+        # _img1 = ImageTk.PhotoImage(file=photo_location)
+        # self.Label21.configure(image=_img1)
+        self.Label21.configure(text='''Label''')
+
         # LABEL FRAME
         self.Labelframe3 = tk.LabelFrame(self.Create)
         self.Labelframe3.place(x=19, y=116, height=602, width=554)
@@ -354,7 +373,7 @@ class Toplevel1:
         self.Labelframe3.configure(highlightbackground="#d9d9d9")
         self.Labelframe3.configure(highlightcolor="white")
 
-        # FULL NAME LABEL
+        # FULLNAME LABEL
         self.Label4 = tk.Label(self.Labelframe3)
         self.Label4.place(x=11, y=50, height=35, width=66, bordermode='ignore')
         self.Label4.configure(activebackground="#f9f9f9")
@@ -366,6 +385,19 @@ class Toplevel1:
         self.Label4.configure(highlightbackground="#d9d9d9")
         self.Label4.configure(highlightcolor="black")
         self.Label4.configure(text='''Fullname''')
+
+        # FULLNAME ENTRY
+        self.Entry3 = tk.Entry(self.Labelframe3)
+        self.Entry3.place(x=41, y=99, height=20, width=204, bordermode='ignore')
+        self.Entry3.configure(background="white")
+        self.Entry3.configure(disabledforeground="#a3a3a3")
+        self.Entry3.configure(font="TkFixedFont")
+        self.Entry3.configure(foreground="#000000")
+        self.Entry3.configure(highlightbackground="#d9d9d9")
+        self.Entry3.configure(highlightcolor="black")
+        self.Entry3.configure(insertbackground="black")
+        self.Entry3.configure(selectbackground="blue")
+        self.Entry3.configure(selectforeground="white")
 
         # EMAIL LABEL
         self.Label5 = tk.Label(self.Labelframe3)
@@ -380,6 +412,19 @@ class Toplevel1:
         self.Label5.configure(highlightcolor="black")
         self.Label5.configure(text='''E-mail''')
 
+        # EMAIL ENTRY
+        self.Entry4 = tk.Entry(self.Labelframe3)
+        self.Entry4.place(x=41, y=204, height=20, width=204, bordermode='ignore')
+        self.Entry4.configure(background="white")
+        self.Entry4.configure(disabledforeground="#a3a3a3")
+        self.Entry4.configure(font="TkFixedFont")
+        self.Entry4.configure(foreground="#000000")
+        self.Entry4.configure(highlightbackground="#d9d9d9")
+        self.Entry4.configure(highlightcolor="black")
+        self.Entry4.configure(insertbackground="black")
+        self.Entry4.configure(selectbackground="blue")
+        self.Entry4.configure(selectforeground="white")
+
         # D.O.B LABEL
         self.Label6 = tk.Label(self.Labelframe3)
         self.Label6.place(x=11, y=249, height=36, width=68, bordermode='ignore')
@@ -392,6 +437,19 @@ class Toplevel1:
         self.Label6.configure(highlightbackground="#d9d9d9")
         self.Label6.configure(highlightcolor="black")
         self.Label6.configure(text='''D.O.B''')
+
+        # D.O.B ENTRY
+        self.Entry5 = tk.Entry(self.Labelframe3)
+        self.Entry5.place(x=41, y=299, height=20, width=204, bordermode='ignore')
+        self.Entry5.configure(background="white")
+        self.Entry5.configure(disabledforeground="#a3a3a3")
+        self.Entry5.configure(font="TkFixedFont")
+        self.Entry5.configure(foreground="#000000")
+        self.Entry5.configure(highlightbackground="#d9d9d9")
+        self.Entry5.configure(highlightcolor="black")
+        self.Entry5.configure(insertbackground="black")
+        self.Entry5.configure(selectbackground="blue")
+        self.Entry5.configure(selectforeground="white")
 
         # PHONE NUMBER LABEL
         self.Label7 = tk.Label(self.Labelframe3)
@@ -406,6 +464,19 @@ class Toplevel1:
         self.Label7.configure(highlightcolor="black")
         self.Label7.configure(text='''Phone''')
 
+        # PHONE NUMBER ENTRY
+        self.Entry6 = tk.Entry(self.Labelframe3)
+        self.Entry6.place(x=41, y=406, height=20, width=204, bordermode='ignore')
+        self.Entry6.configure(background="white")
+        self.Entry6.configure(disabledforeground="#a3a3a3")
+        self.Entry6.configure(font="TkFixedFont")
+        self.Entry6.configure(foreground="#000000")
+        self.Entry6.configure(highlightbackground="#d9d9d9")
+        self.Entry6.configure(highlightcolor="black")
+        self.Entry6.configure(insertbackground="black")
+        self.Entry6.configure(selectbackground="blue")
+        self.Entry6.configure(selectforeground="white")
+
         # ADDRESS LABEL
         self.Label8 = tk.Label(self.Labelframe3)
         self.Label8.place(x=11, y=465, height=36, width=90, bordermode='ignore')
@@ -419,10 +490,36 @@ class Toplevel1:
         self.Label8.configure(highlightcolor="black")
         self.Label8.configure(text='''Address''')
 
+        # ADDRESS ENTRY
+        self.Entry7 = tk.Entry(self.Labelframe3)
+        self.Entry7.place(x=41, y=514, height=20, width=204, bordermode='ignore')
+        self.Entry7.configure(background="white")
+        self.Entry7.configure(disabledforeground="#a3a3a3")
+        self.Entry7.configure(font="TkFixedFont")
+        self.Entry7.configure(foreground="#000000")
+        self.Entry7.configure(highlightbackground="#d9d9d9")
+        self.Entry7.configure(highlightcolor="black")
+        self.Entry7.configure(insertbackground="black")
+        self.Entry7.configure(selectbackground="blue")
+        self.Entry7.configure(selectforeground="white")
+
         # SPERATOR LINE
         self.TSeparator1 = ttk.Separator(self.Labelframe3)
         self.TSeparator1.place(x=266, y=23, height=0, bordermode='ignore')
         self.TSeparator1.configure(orient="vertical")
+
+        # GENDER LABEL
+        self.Label9_1 = tk.Label(self.Labelframe3)
+        self.Label9_1.place(x=277, y=20, height=52, width=89, bordermode='ignore')
+        self.Label9_1.configure(activebackground="#f9f9f9")
+        self.Label9_1.configure(activeforeground="black")
+        self.Label9_1.configure(background="#ffffff")
+        self.Label9_1.configure(disabledforeground="#a3a3a3")
+        self.Label9_1.configure(font="-family {Verdana} -size 12 -weight bold")
+        self.Label9_1.configure(foreground="#000000")
+        self.Label9_1.configure(highlightbackground="#d9d9d9")
+        self.Label9_1.configure(highlightcolor="black")
+        self.Label9_1.configure(text='''Gender:''')
 
         # MALE LABEL
         self.Label13 = tk.Label(self.Labelframe3)
@@ -463,7 +560,34 @@ class Toplevel1:
         self.Label14.configure(highlightbackground="#d9d9d9")
         self.Label14.configure(highlightcolor="black")
         self.Label14.configure(text='''Female''')
+
+        # FEMALE RADIOBUTTON
+        self.rad2 = tk.IntVar()
+        self.Radiobutton2 = tk.Radiobutton(self.Labelframe3)
+        self.Radiobutton2.place(x=452, y=72, height=42, width=59, bordermode='ignore')
+        self.Radiobutton2.configure(activebackground="#ececec")
+        self.Radiobutton2.configure(activeforeground="#000000")
+        self.Radiobutton2.configure(background="#ffffff")
+        self.Radiobutton2.configure(disabledforeground="#a3a3a3")
+        self.Radiobutton2.configure(foreground="#000000")
+        self.Radiobutton2.configure(highlightbackground="#d9d9d9")
+        self.Radiobutton2.configure(highlightcolor="black")
+        self.Radiobutton2.configure(justify='left')
+        self.Radiobutton2.configure(variable=self.rad2)
         
+        # MARITAL STATUS LABEL
+        self.Label9 = tk.Label(self.Labelframe3)
+        self.Label9.place(x=277, y=133, height=51, width=145, bordermode='ignore')
+        self.Label9.configure(activebackground="#f9f9f9")
+        self.Label9.configure(activeforeground="black")
+        self.Label9.configure(background="#ffffff")
+        self.Label9.configure(disabledforeground="#a3a3a3")
+        self.Label9.configure(font="-family {Verdana} -size 12 -weight bold")
+        self.Label9.configure(foreground="#000000")
+        self.Label9.configure(highlightbackground="#d9d9d9")
+        self.Label9.configure(highlightcolor="black")
+        self.Label9.configure(text='''Marital Status :''')
+
         # MARRIED LABEL
         self.Label10 = tk.Label(self.Labelframe3)
         self.Label10.place(x=400, y=210, height=37, width=83, bordermode='ignore')
@@ -476,6 +600,20 @@ class Toplevel1:
         self.Label10.configure(highlightbackground="#d9d9d9")
         self.Label10.configure(highlightcolor="black")
         self.Label10.configure(text='''Married''')
+
+        # MARRIED LABEL BUTTON
+        self.rad4 = tk.IntVar()
+        self.Radiobutton4 = tk.Radiobutton(self.Labelframe3)
+        self.Radiobutton4.place(x=493, y=210, height=42, width=28, bordermode='ignore')
+        self.Radiobutton4.configure(activebackground="#ececec")
+        self.Radiobutton4.configure(activeforeground="#000000")
+        self.Radiobutton4.configure(background="#ffffff")
+        self.Radiobutton4.configure(disabledforeground="#a3a3a3")
+        self.Radiobutton4.configure(foreground="#000000")
+        self.Radiobutton4.configure(highlightbackground="#d9d9d9")
+        self.Radiobutton4.configure(highlightcolor="black")
+        self.Radiobutton4.configure(justify='left')
+        self.Radiobutton4.configure(variable=self.rad4)
 
         # SINGLE LABEL
         self.Label11 = tk.Label(self.Labelframe3)
@@ -490,31 +628,7 @@ class Toplevel1:
         self.Label11.configure(highlightcolor="black")
         self.Label11.configure(text='''Single''')
 
-        self.rad2 = tk.IntVar()
-        self.Radiobutton2 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton2.place(x=452, y=72, height=42, width=59, bordermode='ignore')
-        self.Radiobutton2.configure(activebackground="#ececec")
-        self.Radiobutton2.configure(activeforeground="#000000")
-        self.Radiobutton2.configure(background="#ffffff")
-        self.Radiobutton2.configure(disabledforeground="#a3a3a3")
-        self.Radiobutton2.configure(foreground="#000000")
-        self.Radiobutton2.configure(highlightbackground="#d9d9d9")
-        self.Radiobutton2.configure(highlightcolor="black")
-        self.Radiobutton2.configure(justify='left')
-        self.Radiobutton2.configure(variable=self.rad2)
-
-        self.Label9 = tk.Label(self.Labelframe3)
-        self.Label9.place(x=277, y=133, height=51, width=145, bordermode='ignore')
-        self.Label9.configure(activebackground="#f9f9f9")
-        self.Label9.configure(activeforeground="black")
-        self.Label9.configure(background="#ffffff")
-        self.Label9.configure(disabledforeground="#a3a3a3")
-        self.Label9.configure(font="-family {Verdana} -size 12 -weight bold")
-        self.Label9.configure(foreground="#000000")
-        self.Label9.configure(highlightbackground="#d9d9d9")
-        self.Label9.configure(highlightcolor="black")
-        self.Label9.configure(text='''Marital Status :''')
-
+        # SINGLE RADIO BUTTON
         self.rad3 = tk.IntVar()
         self.Radiobutton3 = tk.Radiobutton(self.Labelframe3)
         self.Radiobutton3.place(x=359, y=210, height=42, width=29, bordermode='ignore')
@@ -528,85 +642,76 @@ class Toplevel1:
         self.Radiobutton3.configure(justify='left')
         self.Radiobutton3.configure(variable=self.rad3)
 
-        self.rad4 = tk.IntVar()
-        self.Radiobutton4 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton4.place(x=493, y=210, height=42, width=28, bordermode='ignore')
-        self.Radiobutton4.configure(activebackground="#ececec")
-        self.Radiobutton4.configure(activeforeground="#000000")
-        self.Radiobutton4.configure(background="#ffffff")
-        self.Radiobutton4.configure(disabledforeground="#a3a3a3")
-        self.Radiobutton4.configure(foreground="#000000")
-        self.Radiobutton4.configure(highlightbackground="#d9d9d9")
-        self.Radiobutton4.configure(highlightcolor="black")
-        self.Radiobutton4.configure(justify='left')
-        self.Radiobutton4.configure(variable=self.rad4)
+        # TYPE OF ACCOUNT LABEL
+        self.Label12 = tk.Label(self.Labelframe3)
+        self.Label12.place(x=277, y=287, height=35, width=168, bordermode='ignore')
+        self.Label12.configure(activebackground="#f9f9f9")
+        self.Label12.configure(activeforeground="black")
+        self.Label12.configure(background="#ffffff")
+        self.Label12.configure(disabledforeground="#a3a3a3")
+        self.Label12.configure(font="-family {Verdana} -size 12 -weight bold")
+        self.Label12.configure(foreground="#000000")
+        self.Label12.configure(highlightbackground="#d9d9d9")
+        self.Label12.configure(highlightcolor="black")
+        self.Label12.configure(text='''Type of Account :''')
 
-        self.Entry3 = tk.Entry(self.Labelframe3)
-        self.Entry3.place(x=41, y=99, height=20, width=204, bordermode='ignore')
-        self.Entry3.configure(background="white")
-        self.Entry3.configure(disabledforeground="#a3a3a3")
-        self.Entry3.configure(font="TkFixedFont")
-        self.Entry3.configure(foreground="#000000")
-        self.Entry3.configure(highlightbackground="#d9d9d9")
-        self.Entry3.configure(highlightcolor="black")
-        self.Entry3.configure(insertbackground="black")
-        self.Entry3.configure(selectbackground="blue")
-        self.Entry3.configure(selectforeground="white")
+        # SAVINGS LABEL
+        self.Label15 = tk.Label(self.Labelframe3)
+        self.Label15.place(x=297, y=338, height=35, width=89, bordermode='ignore')
+        self.Label15.configure(activebackground="#f9f9f9")
+        self.Label15.configure(activeforeground="black")
+        self.Label15.configure(background="#ffffff")
+        self.Label15.configure(disabledforeground="#a3a3a3")
+        self.Label15.configure(font="-family {Verdana} -size 11")
+        self.Label15.configure(foreground="#000000")
+        self.Label15.configure(highlightbackground="#d9d9d9")
+        self.Label15.configure(highlightcolor="black")
+        self.Label15.configure(text='''Savings :''')
 
-        self.Entry4 = tk.Entry(self.Labelframe3)
-        self.Entry4.place(x=41, y=204, height=20, width=204, bordermode='ignore')
-        self.Entry4.configure(background="white")
-        self.Entry4.configure(disabledforeground="#a3a3a3")
-        self.Entry4.configure(font="TkFixedFont")
-        self.Entry4.configure(foreground="#000000")
-        self.Entry4.configure(highlightbackground="#d9d9d9")
-        self.Entry4.configure(highlightcolor="black")
-        self.Entry4.configure(insertbackground="black")
-        self.Entry4.configure(selectbackground="blue")
-        self.Entry4.configure(selectforeground="white")
+        # SAVINGS RADIOBUTTON
+        self.rad5 = tk.IntVar()
+        self.Radiobutton5 = tk.Radiobutton(self.Labelframe3)
+        self.Radiobutton5.place(x=400, y=338, height=42, width=59, bordermode='ignore')
+        self.Radiobutton5.configure(activebackground="#ececec")
+        self.Radiobutton5.configure(activeforeground="#000000")
+        self.Radiobutton5.configure(background="#ffffff")
+        self.Radiobutton5.configure(disabledforeground="#a3a3a3")
+        self.Radiobutton5.configure(foreground="#000000")
+        self.Radiobutton5.configure(highlightbackground="#d9d9d9")
+        self.Radiobutton5.configure(highlightcolor="black")
+        self.Radiobutton5.configure(justify='left')
+        self.Radiobutton5.configure(variable=self.rad5)
 
-        self.Entry5 = tk.Entry(self.Labelframe3)
-        self.Entry5.place(x=41, y=299, height=20, width=204, bordermode='ignore')
+        # CURRENT LABEL
+        self.Label16 = tk.Label(self.Labelframe3)
+        self.Label16.place(x=297, y=400, height=35, width=97, bordermode='ignore')
+        self.Label16.configure(activebackground="#f9f9f9")
+        self.Label16.configure(activeforeground="black")
+        self.Label16.configure(background="#ffffff")
+        self.Label16.configure(disabledforeground="#a3a3a3")
+        self.Label16.configure(font="-family {Verdana} -size 11")
+        self.Label16.configure(foreground="#000000")
+        self.Label16.configure(highlightbackground="#d9d9d9")
+        self.Label16.configure(highlightcolor="black")
+        self.Label16.configure(text='''Current :''')
 
-        self.Entry5.configure(background="white")
-        self.Entry5.configure(disabledforeground="#a3a3a3")
-        self.Entry5.configure(font="TkFixedFont")
-        self.Entry5.configure(foreground="#000000")
-        self.Entry5.configure(highlightbackground="#d9d9d9")
-        self.Entry5.configure(highlightcolor="black")
-        self.Entry5.configure(insertbackground="black")
-        self.Entry5.configure(selectbackground="blue")
-        self.Entry5.configure(selectforeground="white")
+        # CURRENT LABELBUTTON
+        self.rad6 = tk.IntVar()
+        self.Radiobutton6 = tk.Radiobutton(self.Labelframe3)
+        self.Radiobutton6.place(x=400, y=400, height=42, width=59, bordermode='ignore')
+        self.Radiobutton6.configure(activebackground="#ececec")
+        self.Radiobutton6.configure(activeforeground="#000000")
+        self.Radiobutton6.configure(background="#ffffff")
+        self.Radiobutton6.configure(disabledforeground="#a3a3a3")
+        self.Radiobutton6.configure(foreground="#000000")
+        self.Radiobutton6.configure(highlightbackground="#d9d9d9")
+        self.Radiobutton6.configure(highlightcolor="black")
+        self.Radiobutton6.configure(justify='left')
+        self.Radiobutton6.configure(variable=self.rad6)
 
-        self.Entry6 = tk.Entry(self.Labelframe3)
-        self.Entry6.place(x=41, y=406, height=20, width=204, bordermode='ignore')
-
-        self.Entry6.configure(background="white")
-        self.Entry6.configure(disabledforeground="#a3a3a3")
-        self.Entry6.configure(font="TkFixedFont")
-        self.Entry6.configure(foreground="#000000")
-        self.Entry6.configure(highlightbackground="#d9d9d9")
-        self.Entry6.configure(highlightcolor="black")
-        self.Entry6.configure(insertbackground="black")
-        self.Entry6.configure(selectbackground="blue")
-        self.Entry6.configure(selectforeground="white")
-
-        self.Entry7 = tk.Entry(self.Labelframe3)
-        self.Entry7.place(x=41, y=514, height=20, width=204, bordermode='ignore')
-
-        self.Entry7.configure(background="white")
-        self.Entry7.configure(disabledforeground="#a3a3a3")
-        self.Entry7.configure(font="TkFixedFont")
-        self.Entry7.configure(foreground="#000000")
-        self.Entry7.configure(highlightbackground="#d9d9d9")
-        self.Entry7.configure(highlightcolor="black")
-        self.Entry7.configure(insertbackground="black")
-        self.Entry7.configure(selectbackground="blue")
-        self.Entry7.configure(selectforeground="white")
-
+        # CREATE ACCOUNT BUTTON
         self.Button6 = tk.Button(self.Labelframe3, command=lambda: self.show_frame(self.T_and_C))
-        self.Button6.place(x=329, y=482, height=34, width=157
-                           , bordermode='ignore')
+        self.Button6.place(x=329, y=482, height=34, width=157, bordermode='ignore')
         self.Button6.configure(activebackground="#ececec")
         self.Button6.configure(activeforeground="#000000")
         self.Button6.configure(background="#000000")
@@ -619,86 +724,7 @@ class Toplevel1:
         self.Button6.configure(pady="0")
         self.Button6.configure(text='''Create Account''')
 
-        self.Label12 = tk.Label(self.Labelframe3)
-        self.Label12.place(x=277, y=287, height=35, width=168
-                           , bordermode='ignore')
-        self.Label12.configure(activebackground="#f9f9f9")
-        self.Label12.configure(activeforeground="black")
-        self.Label12.configure(background="#ffffff")
-        self.Label12.configure(disabledforeground="#a3a3a3")
-        self.Label12.configure(font="-family {Verdana} -size 12 -weight bold")
-        self.Label12.configure(foreground="#000000")
-        self.Label12.configure(highlightbackground="#d9d9d9")
-        self.Label12.configure(highlightcolor="black")
-        self.Label12.configure(text='''Type of Account :''')
-
-        self.Label15 = tk.Label(self.Labelframe3)
-        self.Label15.place(x=297, y=338, height=35, width=89
-                           , bordermode='ignore')
-        self.Label15.configure(activebackground="#f9f9f9")
-        self.Label15.configure(activeforeground="black")
-        self.Label15.configure(background="#ffffff")
-        self.Label15.configure(disabledforeground="#a3a3a3")
-        self.Label15.configure(font="-family {Verdana} -size 11")
-        self.Label15.configure(foreground="#000000")
-        self.Label15.configure(highlightbackground="#d9d9d9")
-        self.Label15.configure(highlightcolor="black")
-        self.Label15.configure(text='''Savings :''')
-
-        self.rad5 = tk.IntVar()
-        self.Radiobutton5 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton5.place(x=400, y=338, height=42, width=59
-                                , bordermode='ignore')
-        self.Radiobutton5.configure(activebackground="#ececec")
-        self.Radiobutton5.configure(activeforeground="#000000")
-        self.Radiobutton5.configure(background="#ffffff")
-        self.Radiobutton5.configure(disabledforeground="#a3a3a3")
-        self.Radiobutton5.configure(foreground="#000000")
-        self.Radiobutton5.configure(highlightbackground="#d9d9d9")
-        self.Radiobutton5.configure(highlightcolor="black")
-        self.Radiobutton5.configure(justify='left')
-        self.Radiobutton5.configure(variable=self.rad5)
-
-        self.Label16 = tk.Label(self.Labelframe3)
-        self.Label16.place(x=297, y=400, height=35, width=97
-                           , bordermode='ignore')
-        self.Label16.configure(activebackground="#f9f9f9")
-        self.Label16.configure(activeforeground="black")
-        self.Label16.configure(background="#ffffff")
-        self.Label16.configure(disabledforeground="#a3a3a3")
-        self.Label16.configure(font="-family {Verdana} -size 11")
-        self.Label16.configure(foreground="#000000")
-        self.Label16.configure(highlightbackground="#d9d9d9")
-        self.Label16.configure(highlightcolor="black")
-        self.Label16.configure(text='''Current :''')
-
-        self.rad6 = tk.IntVar()
-        self.Radiobutton6 = tk.Radiobutton(self.Labelframe3)
-        self.Radiobutton6.place(x=400, y=400, height=42, width=59
-                                , bordermode='ignore')
-        self.Radiobutton6.configure(activebackground="#ececec")
-        self.Radiobutton6.configure(activeforeground="#000000")
-        self.Radiobutton6.configure(background="#ffffff")
-        self.Radiobutton6.configure(disabledforeground="#a3a3a3")
-        self.Radiobutton6.configure(foreground="#000000")
-        self.Radiobutton6.configure(highlightbackground="#d9d9d9")
-        self.Radiobutton6.configure(highlightcolor="black")
-        self.Radiobutton6.configure(justify='left')
-        self.Radiobutton6.configure(variable=self.rad6)
-
-        self.Label9_1 = tk.Label(self.Labelframe3)
-        self.Label9_1.place(x=277, y=20, height=52, width=89
-                            , bordermode='ignore')
-        self.Label9_1.configure(activebackground="#f9f9f9")
-        self.Label9_1.configure(activeforeground="black")
-        self.Label9_1.configure(background="#ffffff")
-        self.Label9_1.configure(disabledforeground="#a3a3a3")
-        self.Label9_1.configure(font="-family {Verdana} -size 12 -weight bold")
-        self.Label9_1.configure(foreground="#000000")
-        self.Label9_1.configure(highlightbackground="#d9d9d9")
-        self.Label9_1.configure(highlightcolor="black")
-        self.Label9_1.configure(text='''Gender:''')
-
+        # HOME BUTTON
         self.Button2 = tk.Button(self.Create, command=lambda: self.show_frame(self.Frame1))
         self.Button2.place(x=400, y=34, height=34, width=77)
         self.Button2.configure(activebackground="#e8e800")
@@ -712,6 +738,7 @@ class Toplevel1:
         self.Button2.configure(pady="0")
         self.Button2.configure(text='''Home''')
 
+        # LOGIN BUTTON
         self.Button3 = tk.Button(self.Create, command=lambda: self.show_frame(self.login))
         self.Button3.place(x=493, y=34, height=34, width=77)
         self.Button3.configure(activebackground="#ececec")
@@ -725,18 +752,8 @@ class Toplevel1:
         self.Button3.configure(pady="0")
         self.Button3.configure(text='''Login''')
 
-        self.Label21 = tk.Label(self.Create)
-        self.Label21.place(x=20, y=10, height=98, width=138)
-        self.Label21.configure(background="#ffffff")
-        self.Label21.configure(disabledforeground="#a3a3a3")
-        self.Label21.configure(foreground="#000000")
-        photo_location = os.path.join(prog_location, "edhac1.jpg")
-        global _img1
-        # _img1 = ImageTk.PhotoImage(file=photo_location)
-        # self.Label21.configure(image=_img1)
-        self.Label21.configure(text='''Label''')
 
-        # CREATING LANDING PAGE
+        # ----------------------------LANDING PAGE (HOME PAGE)-----------------------------------
         self.Frame1 = tk.Frame(top)
         self.Frame1.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
         self.Frame1.configure(relief='groove')
@@ -746,6 +763,41 @@ class Toplevel1:
         self.Frame1.configure(highlightbackground="#d9d9d9")
         self.Frame1.configure(highlightcolor="black")
 
+        # LOGO
+        self.Label1 = tk.Label(self.Frame1)
+        self.Label1.place(relx=0.042, rely=0.015, height=121, width=144)
+        self.Label1.configure(background="#000000")
+        self.Label1.configure(disabledforeground="#a3a3a3")
+        self.Label1.configure(foreground="#000000")
+        photo_location = os.path.join(prog_location, "edhac1.jpg")
+        global _img5
+        # _img5 = ImageTk.PhotoImage(file=photo_location)
+        # self.Label1.configure(image=_img5)
+        self.Label1.configure(text='''Label''')
+
+        # HEADER
+        self.Message1 = tk.Message(self.Frame1)
+        self.Message1.place(relx=0.26, rely=0.244, relheight=0.096, relwidth=0.461)
+        self.Message1.configure(background="#e8e800")
+        self.Message1.configure(font="-family {Verdana} -size 16 -weight bold -slant italic")
+        self.Message1.configure(foreground="#000000")
+        self.Message1.configure(highlightbackground="#d9d9d9")
+        self.Message1.configure(highlightcolor="black")
+        self.Message1.configure(text='''EDHAC BANK''')
+        self.Message1.configure(width=230)
+
+        # BANK SLOGAN
+        self.Message2 = tk.Message(self.Frame1)
+        self.Message2.place(relx=0.148, rely=0.336, relheight=0.067, relwidth=0.681)
+        self.Message2.configure(background="#000000")
+        self.Message2.configure(font="-family {Lucida Calligraphy} -size 11")
+        self.Message2.configure(foreground="#ffffff")
+        self.Message2.configure(highlightbackground="#d9d9d9")
+        self.Message2.configure(highlightcolor="black")
+        self.Message2.configure(text='''Together we can build a brighter future''')
+        self.Message2.configure(width=340)
+
+        # OPEN ACCOUNT BUTTON
         self.accButton1 = tk.Button(self.Frame1, command=lambda: self.show_frame(self.Create))
         self.accButton1.place(relx=0.201, rely=0.458, height=40, width=340)
         self.accButton1.configure(activebackground="#f9f9f9")
@@ -761,6 +813,7 @@ class Toplevel1:
         self.accButton1.configure(relief="groove")
         self.accButton1.configure(text='''OPEN AN ACCOUNT''')
 
+        # REGISTER BUTTON
         self.Button1_1 = tk.Button(self.Frame1, command=lambda: self.show_frame(self.Registration))
         self.Button1_1.place(relx=0.201, rely=0.595, height=40, width=340)
         self.Button1_1.configure(activebackground="#ececec")
@@ -774,6 +827,7 @@ class Toplevel1:
         self.Button1_1.configure(pady="0")
         self.Button1_1.configure(text='''REGISTER''')
 
+        # LOGIN BUTTON
         self.Button1_2 = tk.Button(self.Frame1, command=lambda: self.show_frame(self.login))
         self.Button1_2.place(relx=0.201, rely=0.733, height=40, width=340)
         self.Button1_2.configure(activebackground="#ececec")
@@ -787,40 +841,8 @@ class Toplevel1:
         self.Button1_2.configure(pady="0")
         self.Button1_2.configure(text='''LOGIN''')
 
-        self.Message1 = tk.Message(self.Frame1)
-        self.Message1.place(relx=0.26, rely=0.244, relheight=0.096
-                            , relwidth=0.461)
-        self.Message1.configure(background="#e8e800")
-        self.Message1.configure(font="-family {Verdana} -size 16 -weight bold -slant italic")
-        self.Message1.configure(foreground="#000000")
-        self.Message1.configure(highlightbackground="#d9d9d9")
-        self.Message1.configure(highlightcolor="black")
-        self.Message1.configure(text='''EDHAC BANK''')
-        self.Message1.configure(width=230)
 
-        self.Message2 = tk.Message(self.Frame1)
-        self.Message2.place(relx=0.148, rely=0.336, relheight=0.067
-                            , relwidth=0.681)
-        self.Message2.configure(background="#000000")
-        self.Message2.configure(font="-family {Lucida Calligraphy} -size 11")
-        self.Message2.configure(foreground="#ffffff")
-        self.Message2.configure(highlightbackground="#d9d9d9")
-        self.Message2.configure(highlightcolor="black")
-        self.Message2.configure(text='''Together we can build a brighter future''')
-        self.Message2.configure(width=340)
-
-        self.Label1 = tk.Label(self.Frame1)
-        self.Label1.place(relx=0.042, rely=0.015, height=121, width=144)
-        self.Label1.configure(background="#000000")
-        self.Label1.configure(disabledforeground="#a3a3a3")
-        self.Label1.configure(foreground="#000000")
-        photo_location = os.path.join(prog_location, "edhac1.jpg")
-        global _img5
-        # _img5 = ImageTk.PhotoImage(file=photo_location)
-        # self.Label1.configure(image=_img5)
-        self.Label1.configure(text='''Label''')
-
-        # CREATING REGISTRATION PAGE
+        # ------------------REGISTRATION PAGE---------------------------
         self.Registration = tk.Frame(top)
         self.Registration.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
         self.Registration.configure(relief='groove')
@@ -830,6 +852,7 @@ class Toplevel1:
         self.Registration.configure(highlightbackground="#ffffff")
         self.Registration.configure(highlightcolor="black")
 
+        # LOGO
         self.Label17 = tk.Label(self.Registration)
         self.Label17.place(x=11, y=10, height=102, width=192)
         self.Label17.configure(activebackground="#f9f9f9")
@@ -845,6 +868,7 @@ class Toplevel1:
         # self.Label17.configure(image=_img2)
         self.Label17.configure(text='''Label''')
 
+        # REGISTRATION LABEL
         self.Label18 = tk.Label(self.Registration)
         self.Label18.place(x=167, y=178, height=54, width=171)
         self.Label18.configure(activebackground="#f9f9f9")
@@ -857,6 +881,7 @@ class Toplevel1:
         self.Label18.configure(highlightcolor="black")
         self.Label18.configure(text='''Registration''')
 
+        # ACCOUNT NUMBER LABEL
         self.Label19 = tk.Label(self.Registration)
         self.Label19.place(x=21, y=267, height=39, width=167)
         self.Label19.configure(activebackground="#f9f9f9")
@@ -869,6 +894,20 @@ class Toplevel1:
         self.Label19.configure(highlightcolor="black")
         self.Label19.configure(text='''Account number :''')
 
+        # ACCOUNT NUMBER ENTRY
+        self.Entry8 = tk.Entry(self.Registration)
+        self.Entry8.place(x=209, y=273, height=27, width=200)
+        self.Entry8.configure(background="white")
+        self.Entry8.configure(disabledforeground="#a3a3a3")
+        self.Entry8.configure(font="TkFixedFont")
+        self.Entry8.configure(foreground="#000000")
+        self.Entry8.configure(highlightbackground="#d9d9d9")
+        self.Entry8.configure(highlightcolor="black")
+        self.Entry8.configure(insertbackground="black")
+        self.Entry8.configure(selectbackground="blue")
+        self.Entry8.configure(selectforeground="white")
+
+        # USERNAME LABEL
         self.Label20 = tk.Label(self.Registration)
         self.Label20.place(x=42, y=337, height=38, width=119)
         self.Label20.configure(activebackground="#f9f9f9")
@@ -881,6 +920,72 @@ class Toplevel1:
         self.Label20.configure(highlightcolor="black")
         self.Label20.configure(text='''Username :''')
 
+        # USERNAME ENTRY
+        self.Entry9 = tk.Entry(self.Registration)
+        self.Entry9.place(x=209, y=342, height=27, width=200)
+        self.Entry9.configure(background="white")
+        self.Entry9.configure(disabledforeground="#a3a3a3")
+        self.Entry9.configure(font="TkFixedFont")
+        self.Entry9.configure(foreground="#000000")
+        self.Entry9.configure(highlightbackground="#d9d9d9")
+        self.Entry9.configure(highlightcolor="black")
+        self.Entry9.configure(insertbackground="black")
+        self.Entry9.configure(selectbackground="blue")
+        self.Entry9.configure(selectforeground="white")
+
+        # PIN LABEL
+        self.Label22 = tk.Label(self.Registration)
+        self.Label22.place(x=42, y=406, height=39, width=110)
+        self.Label22.configure(activebackground="#f9f9f9")
+        self.Label22.configure(activeforeground="black")
+        self.Label22.configure(background="#ffffff")
+        self.Label22.configure(disabledforeground="#a3a3a3")
+        self.Label22.configure(font="-family {Verdana} -size 11 -weight bold")
+        self.Label22.configure(foreground="#000000")
+        self.Label22.configure(highlightbackground="#d9d9d9")
+        self.Label22.configure(highlightcolor="black")
+        self.Label22.configure(text='''Pin :''')
+
+        # PIN ENTRY
+        self.Entry10 = tk.Entry(self.Registration)
+        self.Entry10.place(x=209, y=416, height=27, width=200)
+        self.Entry10.configure(background="white")
+        self.Entry10.configure(disabledforeground="#a3a3a3")
+        self.Entry10.configure(font="TkFixedFont")
+        self.Entry10.configure(foreground="#000000")
+        self.Entry10.configure(highlightbackground="#d9d9d9")
+        self.Entry10.configure(highlightcolor="black")
+        self.Entry10.configure(insertbackground="black")
+        self.Entry10.configure(selectbackground="blue")
+        self.Entry10.configure(selectforeground="white")
+
+        # CONFIRM PIN LABEL
+        self.Label22_1 = tk.Label(self.Registration)
+        self.Label22_1.place(x=11, y=475, height=39, width=192)
+        self.Label22_1.configure(activebackground="#f9f9f9")
+        self.Label22_1.configure(activeforeground="black")
+        self.Label22_1.configure(background="#ffffff")
+        self.Label22_1.configure(disabledforeground="#a3a3a3")
+        self.Label22_1.configure(font="-family {Verdana} -size 11 -weight bold")
+        self.Label22_1.configure(foreground="#000000")
+        self.Label22_1.configure(highlightbackground="#d9d9d9")
+        self.Label22_1.configure(highlightcolor="black")
+        self.Label22_1.configure(text='''Confirm pin :''')
+
+        # CONFIRM PIN ENTRY
+        self.Entry10_1 = tk.Entry(self.Registration)
+        self.Entry10_1.place(x=209, y=481, height=27, width=200)
+        self.Entry10_1.configure(background="white")
+        self.Entry10_1.configure(disabledforeground="#a3a3a3")
+        self.Entry10_1.configure(font="TkFixedFont")
+        self.Entry10_1.configure(foreground="#000000")
+        self.Entry10_1.configure(highlightbackground="#d9d9d9")
+        self.Entry10_1.configure(highlightcolor="black")
+        self.Entry10_1.configure(insertbackground="black")
+        self.Entry10_1.configure(selectbackground="blue")
+        self.Entry10_1.configure(selectforeground="white")
+
+        # REGISTER BUTTON
         self.Button7 = tk.Button(self.Registration, command=lambda: self.validation_thread(None))
         self.Button7.place(x=198, y=565, height=34, width=155)
         self.Button7.configure(activebackground="#ececec")
@@ -894,54 +999,7 @@ class Toplevel1:
         self.Button7.configure(pady="0")
         self.Button7.configure(text='''Register''')
 
-        self.Label22 = tk.Label(self.Registration)
-        self.Label22.place(x=42, y=406, height=39, width=110)
-        self.Label22.configure(activebackground="#f9f9f9")
-        self.Label22.configure(activeforeground="black")
-        self.Label22.configure(background="#ffffff")
-        self.Label22.configure(disabledforeground="#a3a3a3")
-        self.Label22.configure(font="-family {Verdana} -size 11 -weight bold")
-        self.Label22.configure(foreground="#000000")
-        self.Label22.configure(highlightbackground="#d9d9d9")
-        self.Label22.configure(highlightcolor="black")
-        self.Label22.configure(text='''Pin :''')
-
-        self.Entry8 = tk.Entry(self.Registration)
-        self.Entry8.place(x=209, y=273, height=27, width=200)
-        self.Entry8.configure(background="white")
-        self.Entry8.configure(disabledforeground="#a3a3a3")
-        self.Entry8.configure(font="TkFixedFont")
-        self.Entry8.configure(foreground="#000000")
-        self.Entry8.configure(highlightbackground="#d9d9d9")
-        self.Entry8.configure(highlightcolor="black")
-        self.Entry8.configure(insertbackground="black")
-        self.Entry8.configure(selectbackground="blue")
-        self.Entry8.configure(selectforeground="white")
-
-        self.Entry9 = tk.Entry(self.Registration)
-        self.Entry9.place(x=209, y=342, height=27, width=200)
-        self.Entry9.configure(background="white")
-        self.Entry9.configure(disabledforeground="#a3a3a3")
-        self.Entry9.configure(font="TkFixedFont")
-        self.Entry9.configure(foreground="#000000")
-        self.Entry9.configure(highlightbackground="#d9d9d9")
-        self.Entry9.configure(highlightcolor="black")
-        self.Entry9.configure(insertbackground="black")
-        self.Entry9.configure(selectbackground="blue")
-        self.Entry9.configure(selectforeground="white")
-
-        self.Entry10 = tk.Entry(self.Registration)
-        self.Entry10.place(x=209, y=416, height=27, width=200)
-        self.Entry10.configure(background="white")
-        self.Entry10.configure(disabledforeground="#a3a3a3")
-        self.Entry10.configure(font="TkFixedFont")
-        self.Entry10.configure(foreground="#000000")
-        self.Entry10.configure(highlightbackground="#d9d9d9")
-        self.Entry10.configure(highlightcolor="black")
-        self.Entry10.configure(insertbackground="black")
-        self.Entry10.configure(selectbackground="blue")
-        self.Entry10.configure(selectforeground="white")
-
+        # HOME BUTTON
         self.Button8 = tk.Button(self.Registration, command=lambda: self.show_frame(self.Frame1))
         self.Button8.place(x=345, y=30, height=34, width=77)
         self.Button8.configure(activebackground="#ececec")
@@ -955,6 +1013,7 @@ class Toplevel1:
         self.Button8.configure(pady="0")
         self.Button8.configure(text='''Home''')
 
+        # CREATE ACCOUNT BUTTON
         self.Button9 = tk.Button(self.Registration, command=lambda: self.show_frame(self.Create))
         self.Button9.place(x=444, y=30, height=34, width=115)
         self.Button9.configure(activebackground="#ececec")
@@ -968,29 +1027,6 @@ class Toplevel1:
         self.Button9.configure(pady="0")
         self.Button9.configure(text='''Create account''')
 
-        self.Label22_1 = tk.Label(self.Registration)
-        self.Label22_1.place(x=11, y=475, height=39, width=192)
-        self.Label22_1.configure(activebackground="#f9f9f9")
-        self.Label22_1.configure(activeforeground="black")
-        self.Label22_1.configure(background="#ffffff")
-        self.Label22_1.configure(disabledforeground="#a3a3a3")
-        self.Label22_1.configure(font="-family {Verdana} -size 11 -weight bold")
-        self.Label22_1.configure(foreground="#000000")
-        self.Label22_1.configure(highlightbackground="#d9d9d9")
-        self.Label22_1.configure(highlightcolor="black")
-        self.Label22_1.configure(text='''Confirm pin :''')
-
-        self.Entry10_1 = tk.Entry(self.Registration)
-        self.Entry10_1.place(x=209, y=481, height=27, width=200)
-        self.Entry10_1.configure(background="white")
-        self.Entry10_1.configure(disabledforeground="#a3a3a3")
-        self.Entry10_1.configure(font="TkFixedFont")
-        self.Entry10_1.configure(foreground="#000000")
-        self.Entry10_1.configure(highlightbackground="#d9d9d9")
-        self.Entry10_1.configure(highlightcolor="black")
-        self.Entry10_1.configure(insertbackground="black")
-        self.Entry10_1.configure(selectbackground="blue")
-        self.Entry10_1.configure(selectforeground="white")
 
         # ------------------Overview Frame-----------------------
         self.overviewframe = tk.Frame(top)
@@ -1002,6 +1038,7 @@ class Toplevel1:
         self.overviewframe.configure(highlightbackground="#d9d9d9")
         self.overviewframe.configure(highlightcolor="black")
 
+        # USER ACCOUNT NUMBER LABEL
         self.active = tk.Label(self.overviewframe)
         self.active.place(relx=0.018, rely=0.088, height=39, width=135)
         self.active.configure(activebackground="#f9f9f9")
@@ -1015,9 +1052,11 @@ class Toplevel1:
         # self.cursor.execute("SELECT Acc_num from reg_bank where username = '{}".format(username))
         # self.active.configure(text='''...........''')
 
+        # HORIZONTAL LINE
         self.TSeparator1 = ttk.Separator(self.overviewframe)
         self.TSeparator1.place(relx=0.051, rely=-2.0, relwidth=0.954)
 
+        # USER FULLNAME LABEL
         self.name = tk.Label(self.overviewframe)
         self.name.place(relx=-0.06, rely=0.191, height=39, width=196)
         self.name.configure(activebackground="#f9f9f9")
@@ -1029,7 +1068,9 @@ class Toplevel1:
         self.name.configure(justify='left')
         self.name.configure(highlightbackground="#d9d9d9")
         self.name.configure(highlightcolor="black")
+        # self.name.configure(text='hehehe')
 
+        # ACCOUNT BALANCE LABEL
         self.balance = tk.Label(self.overviewframe)
         self.balance.place(relx=0.018, rely=0.144, height=40, width=93)
         self.balance.configure(activebackground="#f9f9f9")
@@ -1042,6 +1083,7 @@ class Toplevel1:
         self.balance.configure(highlightcolor="black")
         self.balance.configure(text='''********''')
 
+        # SHOW BALANCE BUTTON
         self.shwbalance = tk.Button(self.overviewframe, command=self.show_balance)
         self.shwbalance.place(relx=0.752, rely=0.186, height=34, width=107)
         self.shwbalance.configure(activebackground="#ececec")
@@ -1057,9 +1099,7 @@ class Toplevel1:
         self.shwbalance.configure(relief="groove")
         self.shwbalance.configure(text='''Show Balance''')
 
-        self.TSeparator1_1 = ttk.Separator(self.overviewframe)
-        self.TSeparator1_1.place(relx=0.019, rely=0.321, relwidth=0.954)
-
+        # EASYLINK LABEL
         self.easylink = tk.Label(self.overviewframe)
         self.easylink.place(relx=0.034, rely=0.256, height=21, width=63)
         self.easylink.configure(activebackground="#f9f9f9")
@@ -1071,7 +1111,12 @@ class Toplevel1:
         self.easylink.configure(highlightbackground="#d9d9d9")
         self.easylink.configure(highlightcolor="black")
         self.easylink.configure(text='''Easylink''')
+        
+        # HORIZONTAL LINE
+        self.TSeparator1_1 = ttk.Separator(self.overviewframe)
+        self.TSeparator1_1.place(relx=0.019, rely=0.321, relwidth=0.954)
 
+        # OVERVIEW BUTTON
         self.overviewbutton = tk.Button(self.overviewframe)
         self.overviewbutton.place(relx=0.068, rely=0.419, height=40, width=107)
         self.overviewbutton.configure(activebackground="#ececec")
@@ -1082,11 +1127,12 @@ class Toplevel1:
         self.overviewbutton.configure(highlightbackground="#d9d9d9")
         self.overviewbutton.configure(highlightcolor="black")
         self.overviewbutton.configure(pady="0")
-        # self.overviewbutton.config()
+        self.overviewbutton.config()
         self.overviewbutton.configure(relief="sunken")
         self.overviewbutton.configure(font="-family {Verdana} -size 9 -weight bold")
         self.overviewbutton.configure(text='''Overview''')
 
+        # AIRTIME BUTTON
         self.airtimebutton = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.airtime))
         self.airtimebutton.place(relx=0.407, rely=0.419, height=40, width=107)
         self.airtimebutton.configure(activebackground="#ececec")
@@ -1101,6 +1147,7 @@ class Toplevel1:
         self.airtimebutton.configure(relief="groove")
         self.airtimebutton.configure(text='''Airtime''')
 
+        # TRANSFER BUTTON
         self.Transferbutton = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.transfer))
         self.Transferbutton.place(relx=0.727, rely=0.419, height=40, width=107)
         self.Transferbutton.configure(activebackground="#ececec")
@@ -1115,6 +1162,7 @@ class Toplevel1:
         self.Transferbutton.configure(relief="groove")
         self.Transferbutton.configure(text='''Transfer''')
 
+        # BILLS BUTTON
         self.Billsbutton = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.bills))
         self.Billsbutton.place(relx=0.068, rely=0.619, height=40, width=107)
         self.Billsbutton.configure(activebackground="#ececec")
@@ -1129,6 +1177,7 @@ class Toplevel1:
         self.Billsbutton.configure(relief="groove")
         self.Billsbutton.configure(text='''Bills''')
 
+        # EXCHANGE BUTTON
         self.Exchange = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.exchange))
         self.Exchange.place(relx=0.407, rely=0.619, height=40, width=107)
         self.Exchange.configure(activebackground="#f9f9f9")
@@ -1145,7 +1194,7 @@ class Toplevel1:
         self.Exchange.configure(relief="groove")
         self.Exchange.configure(text='''Exchange''')
 
-
+        # SETTINGS BUTTON
         self.Settingsbutton = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.Settingsframe))
         self.Settingsbutton.place(relx=0.727, rely=0.619, height=40, width=107)
         self.Settingsbutton.configure(activebackground="#ececec")
@@ -1160,91 +1209,6 @@ class Toplevel1:
         self.Settingsbutton.configure(relief="groove")
         self.Settingsbutton.configure(text='''Settings''')
 
-        self.Settingsframe = tk.Frame(top)
-        self.Settingsframe.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
-        self.Settingsframe.configure(relief='groove')
-        self.Settingsframe.configure(borderwidth="2")
-        self.Settingsframe.configure(relief="groove")
-        self.Settingsframe.configure(background="#ffffff")
-        self.Settingsframe.configure(highlightbackground="#d9d9d9")
-        self.Settingsframe.configure(highlightcolor="black")
-
-        self.return_overview = tk.Button( self.Settingsframe, command=lambda: self.show_frame(self.overviewframe))
-        self.return_overview.place(relx=0.786, rely=0.060, height=34, width=105)
-        self.return_overview.configure(activebackground="#ececec")
-        self.return_overview.configure(activeforeground="#000000")
-        self.return_overview.configure(background="#000000")
-        self.return_overview.configure(cursor="arrow")
-        self.return_overview.configure(disabledforeground="#a3a3a3")
-        self.return_overview.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.return_overview.configure(foreground="#e8e800")
-        self.return_overview.configure(highlightbackground="#d9d9d9")
-        self.return_overview.configure(highlightcolor="black")
-        self.return_overview.configure(pady="0")
-        self.return_overview.configure(relief="groove")
-        self.return_overview.configure(text='''Overview''')
-
-        self.changepinbutton = tk.Button(self.Settingsframe, command=lambda: self.show_frame(self.changepinframe))
-        self.changepinbutton.place(relx=0.786, rely=0.628, height=40, width=87)
-        self.changepinbutton.configure(activebackground="#ececec")
-        self.changepinbutton.configure(activeforeground="#000000")
-        self.changepinbutton.configure(background="#000000")
-        self.changepinbutton.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.changepinbutton.configure(disabledforeground="#a3a3a3")
-        self.changepinbutton.configure(foreground="#e8e800")
-        self.changepinbutton.configure(highlightbackground="#d9d9d9")
-        self.changepinbutton.configure(highlightcolor="black")
-        self.changepinbutton.configure(pady="0")
-        self.changepinbutton.configure(relief="groove")
-        self.changepinbutton.configure(text='''Change pin''')
-
-        self.vtubutton = tk.Button(self.Settingsframe, command=lambda: self.show_frame(self.changename))
-        self.vtubutton.place(relx=0.308, rely=0.628, height=40, width=97)
-        self.vtubutton.configure(activebackground="#ececec")
-        self.vtubutton.configure(activeforeground="#000000")
-        self.vtubutton.configure(background="#000000")
-        self.vtubutton.configure(disabledforeground="#a3a3a3")
-        self.vtubutton.configure(foreground="#e8e800")
-        self.vtubutton.configure(highlightbackground="#d9d9d9")
-        self.vtubutton.configure(highlightcolor="black")
-        self.vtubutton.configure(pady="0")
-        self.vtubutton.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.vtubutton.configure(relief="groove")
-        self.vtubutton.configure(text='''Change\nusername''')
-
-        self.contact = tk.Button(self.Settingsframe, command=lambda: self.show_frame(self.connect))
-        self.contact.place(relx=0.068, rely=0.628, height=40, width=87)
-        self.contact.configure(activebackground="#ececec")
-        self.contact.configure(activeforeground="#000000")
-        self.contact.configure(background="#000000")
-        self.contact.configure(cursor="arrow")
-        self.contact.configure(disabledforeground="#a3a3a3")
-        self.contact.configure(foreground="#e8e800")
-        self.contact.configure(highlightbackground="#d9d9d9")
-        self.contact.configure(highlightcolor="black")
-        self.contact.configure(pady="0")
-        self.contact.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.contact.configure(relief="groove")
-        self.contact.configure(text='''Contact us''')
-
-        self.TSeparator7 = ttk.Separator(self.overviewframe)
-        self.TSeparator7.place(relx=0.021, rely=0.819, relwidth=0.957)
-
-        self.sign_out_button = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.Frame1))
-        self.sign_out_button.place(relx=0.752, rely=0.86, height=34, width=107)
-        self.sign_out_button.configure(activebackground="#ececec")
-        self.sign_out_button.configure(activeforeground="#000000")
-        self.sign_out_button.configure(background="#ffffff")
-        self.sign_out_button.configure(cursor="arrow")
-        self.sign_out_button.configure(disabledforeground="#a3a3a3")
-        self.sign_out_button.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.sign_out_button.configure(foreground="#000000")
-        self.sign_out_button.configure(highlightbackground="#d9d9d9")
-        self.sign_out_button.configure(highlightcolor="black")
-        self.sign_out_button.configure(pady="0")
-        self.sign_out_button.configure(relief="groove")
-        self.sign_out_button.configure(text='''Sign Out''')
-
         # ---------------Airtime Page--------------
         self.airtime = tk.Frame(top)
         self.airtime.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
@@ -1256,6 +1220,7 @@ class Toplevel1:
         self.airtime.configure(highlightbackground="#d9d9d9")
         self.airtime.configure(highlightcolor="black")
 
+        # LOGO
         self.Label1 = tk.Label(self.airtime)
         self.Label1.place(relx=0.042, rely=0.015, height=98, width=145)
         self.Label1.configure(background="#000000")
@@ -1267,6 +1232,7 @@ class Toplevel1:
         # self.Label1.configure(image=_img9)
         self.Label1.configure(text='''Label''')
 
+        # AIRTIME LABELFRAME
         self.airtimelabelframe = tk.LabelFrame(self.airtime)
         self.airtimelabelframe.place(relx=0.105, rely=0.190, relheight=0.709, relwidth=0.795)
         self.airtimelabelframe.configure(relief='groove')
@@ -1277,6 +1243,7 @@ class Toplevel1:
         self.airtimelabelframe.configure(highlightbackground="#d9d9d9")
         self.airtimelabelframe.configure(highlightcolor="black")
 
+        # SELECT MOBILE OPERATOR LABEL
         self.SMOlabel = tk.Label(self.airtimelabelframe)
         self.SMOlabel.place(relx=0.018, rely=0.058, height=41, width=179, bordermode='ignore')
         self.SMOlabel.configure(activebackground="#f9f9f9")
@@ -1289,7 +1256,8 @@ class Toplevel1:
         self.SMOlabel.configure(highlightcolor="black")
         self.SMOlabel.configure(text='''Select Mobile Operator''')
 
-        self.airtelbutton = tk.Button(self.airtimelabelframe, command= self.active_airtelbutton)
+        # AIRTEL BUTTON
+        self.airtelbutton = tk.Button(self.airtimelabelframe, command=self.active_airtelbutton)
         self.airtelbutton.place(relx=0.240, rely=0.174, height=42, width=77, bordermode='ignore')
         self.airtelbutton.configure(activebackground="#ececec")
         self.airtelbutton.configure(activeforeground="#000000")
@@ -1304,7 +1272,8 @@ class Toplevel1:
         self.airtelbutton.configure(relief="groove")
         self.airtelbutton.configure(text='''Airtel''')
 
-        self.vmobilebuuton = tk.Button(self.airtimelabelframe, command= self.active_vmobilebutton)
+        # 9 MOBILE BUTTON
+        self.vmobilebuuton = tk.Button(self.airtimelabelframe, command=self.active_vmobilebutton)
         self.vmobilebuuton.place(relx=0.039, rely=0.174, height=42, width=77, bordermode='ignore')
         self.vmobilebuuton.configure(activebackground="#ececec")
         self.vmobilebuuton.configure(activeforeground="#000000")
@@ -1319,7 +1288,8 @@ class Toplevel1:
         self.vmobilebuuton.configure(relief="groove")
         self.vmobilebuuton.configure(text='''9Mobile''')
 
-        self.mtnbutton = tk.Button(self.airtimelabelframe, command= self.active_mtnbutton)
+        # MTN BUTTON
+        self.mtnbutton = tk.Button(self.airtimelabelframe, command=self.active_mtnbutton)
         self.mtnbutton.place(relx=0.420, rely=0.174, height=42, width=77, bordermode='ignore')
         self.mtnbutton.configure(activebackground="#ececec")
         self.mtnbutton.configure(activeforeground="#000000")
@@ -1334,7 +1304,8 @@ class Toplevel1:
         self.mtnbutton.configure(relief="groove")
         self.mtnbutton.configure(text='''MTN''')
 
-        self.globutton = tk.Button(self.airtimelabelframe, command= self.active_globutton)
+        # GLO BUTTON
+        self.globutton = tk.Button(self.airtimelabelframe, command=self.active_globutton)
         self.globutton.place(relx=0.620, rely=0.174, height=42, width=77, bordermode='ignore')
         self.globutton.configure(activebackground="#ececec")
         self.globutton.configure(activeforeground="#000000")
@@ -1349,6 +1320,7 @@ class Toplevel1:
         self.globutton.configure(relief="groove")
         self.globutton.configure(text='''Glo''')
 
+        # MOBILE NUMBER BUTTON
         self.mnumlabel = tk.Label(self.airtimelabelframe)
         self.mnumlabel.place(relx=0.018, rely=0.348, height=31, width=118, bordermode='ignore')
         self.mnumlabel.configure(activebackground="#f9f9f9")
@@ -1362,40 +1334,7 @@ class Toplevel1:
         self.mnumlabel.configure(highlightcolor="black")
         self.mnumlabel.configure(text='''Mobile Number''')
 
-        self.TSeparator2 = ttk.Separator(self.airtimelabelframe)
-        self.TSeparator2.place(relx=0.042, rely=0.548, relwidth=0.886, bordermode='ignore')
-        self.TSeparator2.configure(cursor="arrow")
-
-        self.amountlabel = tk.Label(self.airtimelabelframe)
-        self.amountlabel.place(relx=0.018, rely=0.58, height=21, width=77, bordermode='ignore')
-        self.amountlabel.configure(activebackground="#f9f9f9")
-        self.amountlabel.configure(activeforeground="black")
-        self.amountlabel.configure(background="#ffffff")
-        self.amountlabel.configure(cursor="arrow")
-        self.amountlabel.configure(disabledforeground="#a3a3a3")
-        self.amountlabel.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.amountlabel.configure(foreground="#000000")
-        self.amountlabel.configure(highlightbackground="#d9d9d9")
-        self.amountlabel.configure(highlightcolor="black")
-        self.amountlabel.configure(text='''Amount''')
-
-        self.amountentry = tk.Entry(self.airtimelabelframe)
-        self.amountentry.place(relx=0.039, rely=0.667, height=30, relwidth=0.411, bordermode='ignore')
-        self.amountentry.configure(background="white")
-        self.amountentry.configure(cursor="arrow")
-        self.amountentry.configure(disabledforeground="#a3a3a3")
-        self.amountentry.configure(font="-family {Verdana} -size 9 -weight bold")
-        self.amountentry.configure(foreground="#000000")
-        self.amountentry.configure(highlightbackground="#ffffff")
-        self.amountentry.configure(highlightcolor="black")
-        self.amountentry.configure(insertbackground="black")
-        self.amountentry.configure(relief="groove")
-        self.amountentry.configure(selectbackground="blue")
-        self.amountentry.configure(selectforeground="white")
-
-        self.TSeparator3 = ttk.Separator(self.airtimelabelframe)
-        self.TSeparator3.place(relx=0.042, rely=0.777, relwidth=0.886, bordermode='ignore')
-
+        # MOBILE NUMBER ENTRY
         self.mnumentry = tk.Entry(self.airtimelabelframe)
         self.mnumentry.place(relx=0.039, rely=0.435, height=30, relwidth=0.411, bordermode='ignore')
         self.mnumentry.configure(background="white")
@@ -1410,6 +1349,45 @@ class Toplevel1:
         self.mnumentry.configure(selectbackground="blue")
         self.mnumentry.configure(selectforeground="white")
 
+        # HORIZONTAL LINE
+        self.TSeparator2 = ttk.Separator(self.airtimelabelframe)
+        self.TSeparator2.place(relx=0.042, rely=0.548, relwidth=0.886, bordermode='ignore')
+        self.TSeparator2.configure(cursor="arrow")
+
+        # AMOUNT LABEL
+        self.amountlabel = tk.Label(self.airtimelabelframe)
+        self.amountlabel.place(relx=0.018, rely=0.58, height=21, width=77, bordermode='ignore')
+        self.amountlabel.configure(activebackground="#f9f9f9")
+        self.amountlabel.configure(activeforeground="black")
+        self.amountlabel.configure(background="#ffffff")
+        self.amountlabel.configure(cursor="arrow")
+        self.amountlabel.configure(disabledforeground="#a3a3a3")
+        self.amountlabel.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.amountlabel.configure(foreground="#000000")
+        self.amountlabel.configure(highlightbackground="#d9d9d9")
+        self.amountlabel.configure(highlightcolor="black")
+        self.amountlabel.configure(text='''Amount''')
+
+        # AMOUNT ENTRY
+        self.amountentry = tk.Entry(self.airtimelabelframe)
+        self.amountentry.place(relx=0.039, rely=0.667, height=30, relwidth=0.411, bordermode='ignore')
+        self.amountentry.configure(background="white")
+        self.amountentry.configure(cursor="arrow")
+        self.amountentry.configure(disabledforeground="#a3a3a3")
+        self.amountentry.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.amountentry.configure(foreground="#000000")
+        self.amountentry.configure(highlightbackground="#ffffff")
+        self.amountentry.configure(highlightcolor="black")
+        self.amountentry.configure(insertbackground="black")
+        self.amountentry.configure(relief="groove")
+        self.amountentry.configure(selectbackground="blue")
+        self.amountentry.configure(selectforeground="white")
+
+        # HORIZONTAL LINE
+        self.TSeparator3 = ttk.Separator(self.airtimelabelframe)
+        self.TSeparator3.place(relx=0.042, rely=0.777, relwidth=0.886, bordermode='ignore')
+
+        # SUBMIT BUTTON
         self.submitbutton = tk.Button(self.airtimelabelframe, command=self.airtime_recharge)
         self.submitbutton.place(relx=0.358, rely=0.829, height=35, width=120, bordermode='ignore')
         self.submitbutton.configure(activebackground="#ececec")
@@ -1425,6 +1403,7 @@ class Toplevel1:
         self.submitbutton.configure(relief="groove")
         self.submitbutton.configure(text='''Submit''')
 
+        # RETURN TO OVERVIEW BUTTON
         self.return_overview = tk.Button(self.airtime, command=lambda: self.show_frame(self.overviewframe))
         self.return_overview.place(relx=0.786, rely=0.060, height=34, width=105)
         self.return_overview.configure(activebackground="#ececec")
@@ -1440,7 +1419,7 @@ class Toplevel1:
         self.return_overview.configure(relief="groove")
         self.return_overview.configure(text='''Overview''')
 
-        # -------------------Transfer Page---------------
+        # -------------------Transfer Page---------------------
         self.transfer = tk.Frame(top)
         self.transfer.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
         self.transfer.configure(relief='groove')
@@ -1450,6 +1429,7 @@ class Toplevel1:
         self.transfer.configure(highlightbackground="#d9d9d9")
         self.transfer.configure(highlightcolor="black")
 
+        # LOGO
         self.Label1 = tk.Label(self.transfer)
         self.Label1.place(relx=0.042, rely=0.015, height=98, width=138)
         self.Label1.configure(background="#000000")
@@ -1461,6 +1441,7 @@ class Toplevel1:
         # self.Label1.configure(image=_img11)
         self.Label1.configure(text='''Label''')
 
+        # TRANSFER LABEL FRAME
         self.transfer_frame = tk.LabelFrame(self.transfer)
         self.transfer_frame.place(relx=0.103, rely=0.165, relheight=0.709, relwidth=0.795)
         self.transfer_frame.configure(relief='groove')
@@ -1591,6 +1572,102 @@ class Toplevel1:
         self.Button1.configure(pady="0")
         self.Button1.configure(relief="groove")
         self.Button1.configure(text='''Overview''')
+
+        # ----------------------SETTINGS-------------------------------------
+        self.Settingsframe = tk.Frame(top)
+        self.Settingsframe.place(relx=0.0, rely=0.0, relheight=1.011, relwidth=1.006)
+        self.Settingsframe.configure(relief='groove')
+        self.Settingsframe.configure(borderwidth="2")
+        self.Settingsframe.configure(relief="groove")
+        self.Settingsframe.configure(background="#ffffff")
+        self.Settingsframe.configure(highlightbackground="#d9d9d9")
+        self.Settingsframe.configure(highlightcolor="black")
+
+        # RETURN OVERVIEW BUTTON
+        self.return_overview = tk.Button( self.Settingsframe, command=lambda: self.show_frame(self.overviewframe))
+        self.return_overview.place(relx=0.786, rely=0.060, height=34, width=105)
+        self.return_overview.configure(activebackground="#ececec")
+        self.return_overview.configure(activeforeground="#000000")
+        self.return_overview.configure(background="#000000")
+        self.return_overview.configure(cursor="arrow")
+        self.return_overview.configure(disabledforeground="#a3a3a3")
+        self.return_overview.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.return_overview.configure(foreground="#e8e800")
+        self.return_overview.configure(highlightbackground="#d9d9d9")
+        self.return_overview.configure(highlightcolor="black")
+        self.return_overview.configure(pady="0")
+        self.return_overview.configure(relief="groove")
+        self.return_overview.configure(text='''Overview''')
+
+        # CHANGE PIN BUTTON
+        self.changepinbutton = tk.Button(self.Settingsframe, command=lambda: self.show_frame(self.changepinframe))
+        self.changepinbutton.place(relx=0.786, rely=0.628, height=40, width=87)
+        self.changepinbutton.configure(activebackground="#ececec")
+        self.changepinbutton.configure(activeforeground="#000000")
+        self.changepinbutton.configure(background="#000000")
+        self.changepinbutton.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.changepinbutton.configure(disabledforeground="#a3a3a3")
+        self.changepinbutton.configure(foreground="#e8e800")
+        self.changepinbutton.configure(highlightbackground="#d9d9d9")
+        self.changepinbutton.configure(highlightcolor="black")
+        self.changepinbutton.configure(pady="0")
+        self.changepinbutton.configure(relief="groove")
+        self.changepinbutton.configure(text='''Change pin''')
+
+        # CHANGE USERNAME BUTTON
+        self.vtubutton = tk.Button(self.Settingsframe, command=lambda: self.show_frame(self.changename))
+        self.vtubutton.place(relx=0.308, rely=0.628, height=40, width=97)
+        self.vtubutton.configure(activebackground="#ececec")
+        self.vtubutton.configure(activeforeground="#000000")
+        self.vtubutton.configure(background="#000000")
+        self.vtubutton.configure(disabledforeground="#a3a3a3")
+        self.vtubutton.configure(foreground="#e8e800")
+        self.vtubutton.configure(highlightbackground="#d9d9d9")
+        self.vtubutton.configure(highlightcolor="black")
+        self.vtubutton.configure(pady="0")
+        self.vtubutton.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.vtubutton.configure(relief="groove")
+        self.vtubutton.configure(text='''Change\nusername''')
+
+        # CONTACT US BUTTON
+        self.contact = tk.Button(self.Settingsframe, command=lambda: self.show_frame(self.connect))
+        self.contact.place(relx=0.068, rely=0.628, height=40, width=87)
+        self.contact.configure(activebackground="#ececec")
+        self.contact.configure(activeforeground="#000000")
+        self.contact.configure(background="#000000")
+        self.contact.configure(cursor="arrow")
+        self.contact.configure(disabledforeground="#a3a3a3")
+        self.contact.configure(foreground="#e8e800")
+        self.contact.configure(highlightbackground="#d9d9d9")
+        self.contact.configure(highlightcolor="black")
+        self.contact.configure(pady="0")
+        self.contact.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.contact.configure(relief="groove")
+        self.contact.configure(text='''Contact us''')
+
+        # HORIZONTAL LINE
+        self.TSeparator7 = ttk.Separator(self.overviewframe)
+        self.TSeparator7.place(relx=0.021, rely=0.819, relwidth=0.957)
+
+        # SIGNOUT BUTTON
+        self.sign_out_button = tk.Button(self.overviewframe, command=lambda: self.show_frame(self.Frame1))
+        self.sign_out_button.place(relx=0.752, rely=0.86, height=34, width=107)
+        self.sign_out_button.configure(activebackground="#ececec")
+        self.sign_out_button.configure(activeforeground="#000000")
+        self.sign_out_button.configure(background="#ffffff")
+        self.sign_out_button.configure(cursor="arrow")
+        self.sign_out_button.configure(disabledforeground="#a3a3a3")
+        self.sign_out_button.configure(font="-family {Verdana} -size 9 -weight bold")
+        self.sign_out_button.configure(foreground="#000000")
+        self.sign_out_button.configure(highlightbackground="#d9d9d9")
+        self.sign_out_button.configure(highlightcolor="black")
+        self.sign_out_button.configure(pady="0")
+        self.sign_out_button.configure(relief="groove")
+        self.sign_out_button.configure(text='''Sign Out''')
+
+        
+
+        
 
         # ------------------Bills Page------------------
         self.bills = tk.Frame(top)
